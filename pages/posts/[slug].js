@@ -1,12 +1,19 @@
-// pages/posts/[slug].js
-
 import { getSinglePost, getPosts } from '../../lib/posts';
+import Link from 'next/link';
+
+import Footer from '../../component/footer';
 
 const NovelPage = (props) => {
   return (
     <div>
-      <h1>{props.post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+      <Link href="/">
+        <a className="text-3xl font-semibold">Wormwood Saga</a>
+      </Link>
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-2xl font-medium">{props.post.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+      </div>
+      <Footer />
     </div>
   );
 };
