@@ -19,3 +19,7 @@ This will allow you to log server data in the browser while working in dev mode,
 ```json
 "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
 ```
+
+# Helpful Links
+
+https://blog.sycamore.design/nextjs-ghost-cms-jamstack-blog
