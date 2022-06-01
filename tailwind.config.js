@@ -1,7 +1,10 @@
 const heroPatterns = require('tailwindcss-hero-patterns/src/patterns');
 
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './component/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     screens: {
       xs: '375px',

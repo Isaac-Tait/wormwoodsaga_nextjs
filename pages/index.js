@@ -1,7 +1,7 @@
 import { getPosts } from '../lib/posts';
 import Link from 'next/link';
 
-import Footer from '../component/Footer';
+import Footer from '../components/Footer';
 
 const Index = (props) => (
   <div className="heropattern-leaf-neutral-100 h-screen">

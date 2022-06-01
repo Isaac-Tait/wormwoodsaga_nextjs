@@ -1,19 +1,26 @@
 import { getSinglePost, getPosts } from '../../lib/posts';
 import Link from 'next/link';
 
-import Footer from '../../component/footer';
+import Footer from '../../components/Footer';
 
 const NovelPage = (props) => {
   return (
-    <div>
+    <div className="heropattern-leaf-neutral-100 h-screen overflow-y-scroll">
       <Link href="/">
         <a className="text-3xl font-semibold">Wormwood Saga</a>
       </Link>
       <div className="max-w-6xl mx-auto">
         <h1 className="text-2xl font-medium">{props.post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: props.post.html }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: props.post.html }}
+          className="mb-12 first-line:uppercase first-line:tracking-widest
+                    first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
+                    first-letter:mr-3 first-letter:float-left"
+        />
       </div>
-      <Footer />
+      <div className="fixed bottom-0 w-full">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="flex items-center justify-between text-xs mx-1">
         <div className="text-slate-500 w-1/3">
           <p className="">
-            © 2021 - {new Date().getFullYear()}, Built with&nbsp;
+            ©{new Date().getFullYear()} - Built with&nbsp;
             <a
               href="https://nextjs.org/"
               className="text-indigo-500 hover:text-amber-400"
@@ -14,8 +14,8 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               Next.js
-            </a>{' '}
-            &&nbsp;
+            </a>
+            ,{' '}
             <a
               href="https://tailwindcss.com"
               className="text-indigo-500 hover:text-lime-400"
@@ -23,6 +23,15 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               TailwindCSS
+            </a>{' '}
+            &&&nbsp;
+            <a
+              href="https://ghost.org/"
+              className="text-indigo-500 hover:text-lime-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ghost
             </a>
             .
           </p>
