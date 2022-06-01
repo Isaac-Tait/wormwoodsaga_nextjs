@@ -1,11 +1,14 @@
 import { getPosts } from '../lib/posts';
 import Link from 'next/link';
 
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Index = (props) => (
   <div className="heropattern-leaf-neutral-100 h-screen">
-    <h1 className="text-3xl font-semibold">Wormwood Saga</h1>
+    <div>
+      <Header />
+    </div>
     <div className="max-w-6xl mx-auto bg-slate-200 rounded-xl">
       <ul className="pl-2">
         {props.posts.map((post) => (
