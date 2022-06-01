@@ -13,9 +13,7 @@ const NovelPage = (props) => {
         <h1 className="text-2xl font-medium">{props.post.title}</h1>
         <div
           dangerouslySetInnerHTML={{ __html: props.post.html }}
-          className="mb-12 first-line:uppercase first-line:tracking-widest
-                    first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
-                    first-letter:mr-3 first-letter:float-left"
+          className="mb-12 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left"
         />
       </div>
       <div className="fixed bottom-0 w-full">

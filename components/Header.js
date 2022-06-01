@@ -7,7 +7,7 @@ const Header = () => {
         <h1 className="text-3xl font-semibold">Wormwood Saga</h1>
       </div>
       <div className="flex justify-end mr-2 space-x-4 text-xs italic">
-        <Link href="https://mountaintopcoding.dev">
+        <Link href="/sign-in">
           <a>Login</a>
         </Link>
         <Link href="https://mountaintopcoding.dev">
