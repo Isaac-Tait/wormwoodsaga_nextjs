@@ -1,4 +1,4 @@
-import { addMember } from '../../lib/ghost';
+import { addMember } from '../lib/ghost';
 
 const SignIn = () => {
   return (
