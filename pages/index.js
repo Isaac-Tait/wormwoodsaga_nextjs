@@ -1,11 +1,17 @@
-import { getPosts } from '../lib/posts';
 import Link from 'next/link';
+import Script from 'next/script';
 
-import Header from '../components/Header';
+import { getPosts } from '../lib/posts';
+
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 const Index = (props) => (
   <div className="heropattern-leaf-neutral-100 h-screen">
+    <Script
+      src="https://unpkg.com/@tryghost/portal@latest/umd/portal.min.js"
+      data-ghost="https://wormwood-saga.ghost.io/"
+    />
     <div>
       <Header />
     </div>
