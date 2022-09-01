@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Script from 'next/script';
+//import Script from 'next/script';
 
 import { getPosts } from '../lib/posts';
 
@@ -23,10 +23,7 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <div className="heropattern-leaf-neutral-100 h-screen">
-      <Script
-        src="https://unpkg.com/@tryghost/portal@latest/umd/portal.min.js"
-        data-ghost="https://wormwood-saga.ghost.io/"
-      />
+      {/* Remove Script Tag */}
       <div>
         <Header />
       </div>
