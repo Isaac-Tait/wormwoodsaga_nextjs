@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { getPosts, getSinglePost } from '../lib/posts';
 
-import Footer from '../components/Footer';
+import Footer from '../../components/Footer';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
