@@ -1,18 +1,31 @@
-import { getSinglePost, getPosts } from '../../lib/posts';
 import Link from 'next/link';
 
-import Footer from '../../components/Footer';
+import { getPosts, getSinglePost } from '../lib/posts';
 
-const NovelPage = (props) => {
+import Footer from '../components/Footer';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const paths = posts.map(({ slug }) => ({ params: { slug } }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const data = await getSinglePost(slug);
+  return { props: { data } };
+}
+
+export default function Post({ data }) {
   return (
     <div className="heropattern-leaf-neutral-100 h-screen overflow-y-scroll">
       <Link href="/">
         <a className="text-3xl font-semibold">Wormwood Saga</a>
       </Link>
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-2xl font-medium">{props.post.title}</h1>
+        <h1 className="text-2xl font-medium">{data.post.title}</h1>
         <div
-          dangerouslySetInnerHTML={{ __html: props.post.html }}
+          dangerouslySetInnerHTML={{ __html: data.post.html }}
           className="mb-12 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left"
         />
       </div>
@@ -21,35 +34,4 @@ const NovelPage = (props) => {
       </div>
     </div>
   );
-};
-
-export default NovelPage;
-
-export async function getStaticPaths() {
-  const posts = await getPosts();
-
-  // Get the paths we want to create based on posts
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-
-  // "fallback: false" gives us a 404 if post not found
-  return { paths, fallback: false };
-}
-
-// Pass the page slug to "getSinglePost()" function
-// Which then passes it to "posts.read()" to query the GhostContentAPI
-export async function getStaticProps(context) {
-  const post = await getSinglePost(context.params.slug);
-
-  if (!post) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: { post },
-    revalidate: 1,
-  };
 }
