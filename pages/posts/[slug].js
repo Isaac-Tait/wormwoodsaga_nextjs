@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { getPosts, getSinglePost } from '../lib/posts';
+import { getPosts, getSinglePost } from '../../lib/posts';
 
 import Footer from '../../components/Footer';
 
